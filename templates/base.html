@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Store</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilo.css') }}">
+</head>
+<body>
+    <header class="cabecario">
+        <nav class="menu-busca">
+            <h1 class="titulo">Tech Store</h1>
+            <form action="busca">
+                <input class="campo-busca" type="text" name="busca" placeholder="Busque um produto">
+            </form>
+            <a href=""><img src='../static/img/carrinhob.png' alt='carrinho' title='carrinho' class="carrinho"></a>
+        </nav>
+        <nav class="menu-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/produto">Celulares</a></li>
+                <li><a href="">Informática</a></li>
+                <li><a href="">Games</a></li>
+                <li><a href="">Gadgets</a></li>
+                <li><a href="">Audio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+</body>
+</html>
