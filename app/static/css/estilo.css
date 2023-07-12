@@ -31,9 +31,27 @@ body{
 .campo-busca{
     width: 800px;
     height: 35px;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+.busca-botao{
+    height: 37px;
+    width: 37px;
+    background-image:url(../img/busca.svg);
+    border-radius: 0px 10px 10px 0px;
+    background-size: cover;
+    position: relative;
+    right: 43px
+}
+.busca-botao:hover{
+    background-blend-mode:difference;
+    cursor: pointer;
 }
 .carrinho{
     width: 40px;
+}
+.carrinho:hover{
+    opacity: 70%;
 }
 /* MENU-NAV */
 .menu-nav{
@@ -53,4 +71,7 @@ body{
 .menu-nav ul li a{
     color: white;
     line-height: 35px;
+}
+main{
+    margin: 20px 40px;
 }
