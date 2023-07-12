@@ -75,3 +75,37 @@ body{
 main{
     margin: 20px 40px;
 }
+/* PRODUTOS */
+h1{
+    margin-bottom: 20px;
+}
+.produtos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+.card-produto{
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+}
+.nome-produto{
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.preco-produto{
+    font-weight: bold;
+}
+
+/* PRODUTO */
+.produto{
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
