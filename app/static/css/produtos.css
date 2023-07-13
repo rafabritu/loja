@@ -11,11 +11,22 @@ h1{
 .card-produto{
     padding: 10px;
     max-width: 240px;
+    background-color: rgb(245, 245, 245);
+}
+.foto-produto{
     display: flex;
-    flex-direction: column;
+    text-align: center;
+    height: 240px;
+    width: 240px;
+    background-color: white;
+}
+.foto-produto img{
+    height: auto;
+    object-fit: contain;
+    width: 100%;
 }
 .nome-produto{
-    margin-bottom: 20px;
+    margin: 10px 0px 20px 0px;
     font-size: 14px;
 }
 .preco-produto{

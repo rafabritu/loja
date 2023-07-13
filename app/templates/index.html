@@ -7,8 +7,10 @@
     <h1>Compre nossos produtos</h1>
     <section class="produtos">
         {% for produto in dados: %}
-            <a href="/produto" class="card-produto">
-                <img src='{{produto[3]}}' alt='' title=''>
+            <a href="/produto/{{produto[0]}}" class="card-produto">
+                <figure class="foto-produto">
+                    <img  src='{{produto[3]}}' alt='' title=''>
+                </figure>
                 <p class="nome-produto">{{produto[1]}}</p>
                 <p class="preco-produto">R$ {{produto[2]}}</p>
             </a>

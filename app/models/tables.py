@@ -1,6 +1,6 @@
 import sqlite3
 
-db = sqlite3.connect('loja.db',)
+db = sqlite3.connect('loja.db',check_same_thread=False)
 
 class usuarios():
     def criar_tabela():
@@ -36,4 +36,6 @@ class produtos():
         cursor = db.cursor()
         sql= f"SELECT * FROM produtos WHERE id={id};"
         cursor.execute(sql)
-        return cursor.fetchall()
+        dados = cursor.fetchall()
+        cursor.close()
+        return dados
