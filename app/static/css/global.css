@@ -1,0 +1,33 @@
+/* RESET */
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+/* GLOBAIS */
+@font-face {
+    font-family: "Cera-pro";
+    font-weight:normal;
+    src: url(../font/cera-pro/Cera-Pro-Medium.otf);
+}
+@font-face {
+    font-family: "Cera-pro";
+    font-weight:bold;
+    src: url(../font/cera-pro/Cera-Pro-Bold.otf);
+}
+@font-face {
+    font-family: "Cera-pro";
+    font-weight:lighter;
+    src: url(../font/cera-pro/Cera-Pro-Light.otf);
+}
+:root{
+    --azul: rgb(18, 44, 66);
+}
+body{
+    font-family: Cera-pro,Verdana, Geneva, Tahoma, sans-serif;
+}
+.borda{
+    border: 1px solid black;
+    border-radius: 10px;
+}

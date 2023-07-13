@@ -1,37 +1,17 @@
 {% extends 'menu.html' %}
-
 {% block conteudo %}
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/produtos.css') }}">
+    </head>
+    
     <h1>Compre nossos produtos</h1>
     <section class="produtos">
-        <a href="/produto" class="card-produto">
-            <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
-            <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
-            <p class="preco-produto">R$ 1714,99</p>
-        </a>
-        <a href="" class="card-produto">
-            <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
-            <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
-            <p class="preco-produto">R$ 1714,99</p>
-        </a href="">
-        <a href="" class="card-produto">
-            <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
-            <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
-            <p class="preco-produto">R$ 1714,99</p>
-        </a href="">
-        <a href="" class="card-produto">
-            <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
-            <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
-            <p class="preco-produto">R$ 1714,99</p>
-        </a href="">
-        <a href="" class="card-produto">
-            <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
-            <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
-            <p class="preco-produto">R$ 1714,99</p>
-        </a href="">
-        <a href="" class="card-produto">
-            <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
-            <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
-            <p class="preco-produto">R$ 1714,99</p>
-        </a href="">
+        {% for produto in dados: %}
+            <a href="/produto" class="card-produto">
+                <img src='{{produto[3]}}' alt='' title=''>
+                <p class="nome-produto">{{produto[1]}}</p>
+                <p class="preco-produto">R$ {{produto[2]}}</p>
+            </a>
+        {% endfor %}
     </section>
 {% endblock %}

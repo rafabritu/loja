@@ -1,0 +1,63 @@
+/* CABEÇARIO */
+.cabecario{
+    color: white;
+    background-color: var(--azul);
+    padding: 10px 30px 0px 30px;
+}
+/* MENU-BUSCA */
+.titulo{
+    margin: 10px;
+}
+.menu-busca{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+.campo-busca{
+    width: 800px;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+.busca-botao{
+    height: 37px;
+    width: 37px;
+    background-image:url(../img/busca.svg);
+    border-radius: 0px 10px 10px 0px;
+    background-size: cover;
+    position: relative;
+    right: 43px
+}
+.busca-botao:hover{
+    background-blend-mode:difference;
+    cursor: pointer;
+}
+.carrinho{
+    width: 40px;
+}
+.carrinho:hover{
+    opacity: 70%;
+}
+/* MENU-NAV */
+.menu-nav{
+    height: 40px;
+}
+.menu-nav ul{
+    display: flex;
+}
+.menu-nav ul li{
+    height: 35px;
+    padding: 0px 10px;
+    border: 1px solid transparent;
+}
+.menu-nav ul li:hover{
+    border-color: white;
+}
+.menu-nav ul li a{
+    color: white;
+    line-height: 35px;
+}
+main{
+    margin: 20px 40px;
+}

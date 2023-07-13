@@ -1,11 +1,36 @@
 {% extends 'menu.html' %}
 {% block conteudo %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/produto.css') }}">
+</head>
 <h1>Smartphone Samsung Galaxy A54 5G 128GB Preto</h1>
 <section>
-    <a href="" class="produto">
-        <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
-        <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
-        <p class="preco-produto">R$ 1714,99</p>
-    </a>
+    <div class="produto">
+        <div class="produto-fotos">
+            <img src='../static//img/57298902-1600-auto.webp' alt='' title=''>
+        </div>
+        <div class="produto-dados borda">
+            <p class="nome-produto">Smartphone Samsung Galaxy A54 5G 128GB Preto</p>
+            <p class="preco-produto">R$ 1714,99</p>
+            <form class="form-compra" action="">
+                <div class="compra-quantidade">
+                    <h3>Quantidade:</h3>
+                    <label for="1">1</label>
+                    <input type="radio" name="quantidade" id="1" value="1">
+                    <label for="2">2</label>
+                    <input type="radio" name="quantidade" id="2" value="2">
+                    <label for="3">3</label>
+                    <input type="radio" name="quantidade" id="3" value="3">
+                    <label for="4">4</label>
+                    <input type="radio" name="quantidade" id="4" value="4">
+                    <label for="5">5</label>
+                    <input type="radio" name="quantidade" id="5" value="5">
+                    <label for="6">6</label>
+                    <input type="radio" name="quantidade" id="6" value="6">
+                </div>
+                <input type="submit" class="compra-btn" value="Comprar agora">
+            </form>
+        </div>
+    </div>
 </section>
 {% endblock %}
