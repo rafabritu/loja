@@ -1,1 +1,1 @@
-from app.models.tables import usuarios,produtos,categorias
+from app.models.produtos import usuarios,produtos,categorias

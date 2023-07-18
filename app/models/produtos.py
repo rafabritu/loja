@@ -1,30 +1,3 @@
-import sqlite3
-
-db = sqlite3.connect('loja.db',check_same_thread=False)
-
-class usuarios():
-    def criar_tabela():
-        cursor = db.cursor()
-        sql = "CREATE TABLE IF NOT EXISTS 'usuarios' (id int AUTO_INCREMENT,nome varchar[50],email varchar[50],telefone int[11],senha varchar[15],PRIMARY KEY(id));"
-        cursor.execute(sql)
-        cursor.close()
-    def cadastrar_usuario(nome,email,telefone,senha):
-        cursor = db.cursor()
-        sql= f"INSERT INTO usuarios (nome,email,telefone,senha) values ({nome},{email},{telefone},{senha});"
-        cursor.execute(sql)
-        cursor.close()
-class categorias():
-    def criar_tabela():
-        cursor = db.cursor()
-        sql = "CREATE TABLE IF NOT EXISTS 'categorias' (cat_id INTEGER PRIMARY KEY AUTOINCREMENT,categoria varchar[30] NOT NULL);"
-        cursor.execute(sql)
-        cursor.close()
-    def cadastrar_categoria(nome):
-        cursor = db.cursor()
-        sql = f"INSERT INTO categorias (rowid,categoria) VALUES (NULL,'{nome}');"
-        cursor.execute(sql)
-        db.commit()
-        cursor.close()
 class produtos():
     def criar_tabela():
         cursor = db.cursor()
