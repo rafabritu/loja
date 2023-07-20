@@ -1,12 +1,6 @@
 from flask import render_template, request
-from app import models
+from app.models import *
 
-produto = models.produtos
-usuarios = models.usuarios
-categorias = models.categorias
-categorias.criar_tabela()
-produto.criar_tabela()
-usuarios.criar_tabela()
 # categorias.cadastrar_categoria("Celulares")
 # categorias.cadastrar_categoria("Games")
 # produto.cadastrar_produto('Samsung Galaxy A54 5G 5G Dual SIM 128 GB branco 8 GB RAM','1979,59','..\static\img\m54.webp',1)
@@ -16,17 +10,17 @@ usuarios.criar_tabela()
 def init_app(app):
     @app.route('/')
     def index():
-        dados = models.produtos.selecionar_todos_produtos()
+        dados = produtos.selecionar_todos_produtos()
         return render_template('index.html',dados=dados)
         
     @app.route('/Categoria/<string:page>')
     def categoria(page):
-        dados = models.produtos.selecionar_categoria(page)
+        dados = produtos.selecionar_categoria(page)
         return render_template('index.html',dados=dados)
         
     @app.route('/produto/<string:id>')
     def produto(id):
-        dados = models.produtos.selecionar_produto(int(id))
+        dados = produtos.selecionar_produto(int(id))
         print(produto)
         return render_template('produto.html',dados=dados)
     

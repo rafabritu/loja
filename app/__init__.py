@@ -1,6 +1,5 @@
 from flask import Flask
 from app import controllers
-from app import models
 
 app = Flask(__name__)
 
