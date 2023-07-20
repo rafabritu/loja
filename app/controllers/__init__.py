@@ -1,6 +1,5 @@
 from flask import render_template, request
 from app.models import *
-
 # categorias.cadastrar_categoria("Celulares")
 # categorias.cadastrar_categoria("Games")
 # produto.cadastrar_produto('Samsung Galaxy A54 5G 5G Dual SIM 128 GB branco 8 GB RAM','1979,59','..\static\img\m54.webp',1)
@@ -10,10 +9,10 @@ from app.models import *
 def init_app(app):
     @app.route('/')
     def index():
-        dados = produtos.selecionar_todos_produtos()
+        dados = produtos.selecionar_tudo()
         return render_template('index.html',dados=dados)
         
-    @app.route('/Categoria/<string:page>')
+    @app.route('/<string:page>')
     def categoria(page):
         dados = produtos.selecionar_categoria(page)
         return render_template('index.html',dados=dados)
