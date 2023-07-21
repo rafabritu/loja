@@ -40,11 +40,10 @@ class produtos():
         return dados
     def atualizar(id,nome,preco,foto,cat_fk):
         cursor = db.cursor()
-        sql= f"UPDATE produtos SET nome='{nome}',preco={preco},foto='{foto}',cat_fk={cat_fk} where id={id};"
+        sql= f"UPDATE produtos SET nome='{nome}',preco='{preco}',foto='{foto}',cat_fk='{cat_fk}' WHERE id={id};"
         cursor.execute(sql)
-        dados = cursor.fetchall()
+        db.commit()
         cursor.close()
-        return dados
     def deletar(id):
         cursor = db.cursor()
         sql= f"DELETE FROM produtos where id={id};"

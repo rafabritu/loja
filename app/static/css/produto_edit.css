@@ -1,0 +1,19 @@
+.editar{
+    width: 70%;
+    margin: 40px auto;
+}
+.editar form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.editar form label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.editar form input[type="text"]{
+    padding: 6px;
+}
+.editar form input[type="submit"]{
+    padding: 6px;
+}

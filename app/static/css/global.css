@@ -32,3 +32,14 @@ body{
     border: 1px solid black;
     border-radius: 10px;
 }
+.compra-btn{
+    width: 10rem;
+    height: 3rem;
+    font-size:medium;
+    font-weight: bold;
+    background-color: var(--azul);
+    color: white;
+    border-radius: 5px;
+    cursor:pointer;
+    margin: 30px auto;
+}

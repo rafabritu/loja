@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/produto_edit.css') }}">
+</head>
+{% for produto in dados %}
+<h1>Editar produto</h1>
+<section class="editar">
+        <form action="/Admin/edit/produto" method="post">
+            <input type="hidden" value="{{produto[0]}}" id="id" name="id">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" value="{{produto[1]}}" id="nome">
+            <label for="preco">Preço</label>
+            <input type="text" name="preco" id="preco" value="{{produto[2]}}">
+            <label for="foto">Foto</label>
+            <input type="file" name="foto" id="foto">
+            <input type="hidden" name="cat_fk" id="cat_fk" value="{{produto[4]}}">
+            <input type="submit" class="compra-btn" value="Atualizar">
+        </form>
+</section>
+{% endfor %}
+{% endblock %}

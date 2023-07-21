@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/admin.css') }}">
+</head>
+    
+<table class="tabela">
+    <tr class="tabela-titulos">
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Foto</th>
+        <th>Cat_FK</th>
+        <th>Ações</th>
+    </tr>
+    {% for produto in dados: %}
+    <tr class="tabela-conteudo">
+        <th>{{produto[0]}}</th>
+        <th>{{produto[1]}}</th>
+        <th>{{produto[2]}}</th>
+        <th>{{produto[3]}}</th>
+        <th>{{produto[4]}}</th>
+        <th><a href="Admin/edit/produto/{{produto[0]}}">Editar</a></th>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

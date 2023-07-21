@@ -1,0 +1,21 @@
+.tabela{
+    width: 80%;
+    margin: auto;
+    padding: 2px;
+    background-color: rgb(222, 252, 192);
+    border-collapse: collapse;
+}
+.tabela tr{
+    height: 30px;
+    border: 1px solid black;
+}
+.tabela-conteudo th{
+    background-color: white;
+    padding: 8px 10px;
+    font-weight: lighter;
+}
+.tabela-titulos th{
+    font-size: large;
+    padding: 8px 10px;
+    font-weight: bold;
+}

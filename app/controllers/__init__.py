@@ -11,6 +11,26 @@ def init_app(app):
     def index():
         dados = produtos.selecionar_tudo()
         return render_template('index.html',dados=dados)
+    
+    @app.route('/Admin')
+    def admin():
+        dados = produtos.selecionar_tudo()
+        return render_template('admin.html',dados=dados)
+        
+    @app.route('/Admin/edit/produto/<string:id>')
+    def produto_edit(id):
+        dados = produtos.selecionar_produto(int(id))
+        return render_template('produto_edit.html',dados=dados)
+        
+    @app.route('/Admin/edit/produto/', methods=["POST"])
+    def submit():
+        id = request.form.get('id')
+        nome = request.form.get('nome')
+        preco = request.form.get('preco')
+        foto = request.form.get('foto')
+        cat_fk = request.form.get('cat_fk')
+        produtos.atualizar(id,nome,preco,foto,cat_fk)
+        return render_template('/admin.html')
         
     @app.route('/<string:page>')
     def categoria(page):
