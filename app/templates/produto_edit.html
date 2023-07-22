@@ -6,7 +6,7 @@
 {% for produto in dados %}
 <h1>Editar produto</h1>
 <section class="editar">
-        <form action="/Admin/edit/produto" method="post">
+        <form action="/Admin/edit/produto" method="post" enctype="multipart/form-data">
             <input type="hidden" value="{{produto[0]}}" id="id" name="id">
             <label for="nome">Nome</label>
             <input type="text" name="nome" value="{{produto[1]}}" id="nome">
