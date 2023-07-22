@@ -14,7 +14,12 @@
             <input type="text" name="preco" id="preco" value="{{produto[2]}}">
             <label for="foto">Foto</label>
             <input type="file" name="foto" id="foto">
-            <input type="hidden" name="cat_fk" id="cat_fk" value="{{produto[4]}}">
+            <!-- <input type="" name="" id="cat_fk" value="{{produto[4]}}"> -->
+            <select name="cat_fk" id="cat_fk">
+                <option value="1">Celulares</option>
+                <option value="2">Games</option>
+                <option value="3">Informática</option>
+            </select>
             <input type="submit" class="compra-btn" value="Atualizar">
         </form>
 </section>

@@ -28,13 +28,12 @@ def init_app(app):
         id = request.form.get('id')
         nome = request.form.get('nome')
         preco = request.form.get('preco')
-        foto = request.form.get('foto')
         file = request.files['foto']
-        filename = file.filename
-        destino = f"{app.config['UPLOAD_FOLDER']}/{filename}"
+        destino = f"{app.config['UPLOAD_FOLDER']}/{file.filename}"
         file.save(destino)
         cat_fk = request.form.get('cat_fk')
-        produtos.atualizar(id,nome,preco,os.path.join('../static/upload',filename),cat_fk)
+        diretorio = f"../static/upload/{file.filename}"
+        produtos.atualizar(id,nome,preco,diretorio,cat_fk)
         return redirect('/Admin')
         
     @app.route('/<string:page>')
