@@ -1,7 +1,6 @@
-import os
-from flask import render_template, request,flash
+from flask import render_template, request,redirect
 from app.models import *
-from werkzeug.utils import secure_filename
+# from werkzeug.utils import secure_filename
 # categorias.cadastrar_categoria("Celulares")
 # categorias.cadastrar_categoria("Games")
 # produto.cadastrar_produto('Samsung Galaxy A54 5G 5G Dual SIM 128 GB branco 8 GB RAM','1979,59','..\static\img\m54.webp',1)
@@ -32,10 +31,11 @@ def init_app(app):
         foto = request.form.get('foto')
         file = request.files['foto']
         filename = file.filename
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        destino = f"{app.config['UPLOAD_FOLDER']}/{filename}"
+        file.save(destino)
         cat_fk = request.form.get('cat_fk')
         produtos.atualizar(id,nome,preco,os.path.join('../static/upload',filename),cat_fk)
-        admin()
+        return redirect('/Admin')
         
     @app.route('/<string:page>')
     def categoria(page):
