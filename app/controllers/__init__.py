@@ -34,8 +34,8 @@ def init_app(app):
         filename = file.filename
         file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
         cat_fk = request.form.get('cat_fk')
-        produtos.atualizar(id,nome,preco,os.path.join(app.config['UPLOAD_FOLDER'],filename),cat_fk)
-        return render_template('admin.html')
+        produtos.atualizar(id,nome,preco,os.path.join('../static/upload',filename),cat_fk)
+        admin()
         
     @app.route('/<string:page>')
     def categoria(page):
