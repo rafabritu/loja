@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/produto_edit.css') }}">
+</head>
+<h1>Cadastrar produto</h1>
+<section class="editar">
+        <form action="/Admin/produto/cadastrar/confirm" method="post" enctype="multipart/form-data">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" value="" id="nome">
+            <label for="preco">Preço</label>
+            <input type="text" name="preco" id="preco" value="">
+            <label for="foto">Foto</label>
+            <input type="file" name="foto" id="foto">
+            <label for="cat_fk">Categoria</label>
+            <select name="cat_fk" id="cat_fk">
+                <option value="1">Celulares</option>
+                <option value="2">Games</option>
+                <option value="3">Informática</option>
+            </select>
+            <input type="submit" class="compra-btn" value="Cadastrar">
+        </form>
+</section>
+{% endblock %}

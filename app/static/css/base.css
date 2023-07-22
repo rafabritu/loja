@@ -34,6 +34,16 @@
     background-blend-mode:difference;
     cursor: pointer;
 }
+/* BOTOES CABEÇARIO */
+.botoes-cabecario{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.login-btn{
+    color: white;
+    font-weight: bold;
+}
 .carrinho{
     width: 40px;
 }

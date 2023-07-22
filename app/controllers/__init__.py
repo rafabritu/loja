@@ -17,6 +17,23 @@ def init_app(app):
     def admin():
         dados = produtos.selecionar_tudo()
         return render_template('admin.html',dados=dados)
+    
+    @app.route('/Admin/cadastrar/produto/')
+    def cadastro_produto():
+        return render_template('pcadastro.html')
+    
+    @app.route('/Admin/produto/cadastrar/confirm', methods=["POST"])
+    def cadastro_confirm():
+        nome = request.form.get('nome')
+        preco = request.form.get('preco')
+        file = request.files['foto']
+        destino = f"{app.config['UPLOAD_FOLDER']}/{file.filename}"
+        file.save(destino)
+        cat_fk = request.form.get('cat_fk')
+        diretorio = f"../static/upload/{file.filename}"
+        produtos.inserir(nome,preco,diretorio,cat_fk)
+        return redirect('/Admin')
+    
         
     @app.route('/Admin/edit/produto/<string:id>')
     def produto_edit(id):
@@ -34,6 +51,11 @@ def init_app(app):
         cat_fk = request.form.get('cat_fk')
         diretorio = f"../static/upload/{file.filename}"
         produtos.atualizar(id,nome,preco,diretorio,cat_fk)
+        return redirect('/Admin')
+    
+    @app.route('/Admin/delete/produto/<string:id>')
+    def produto_delete(id):
+        produtos.deletar(id)
         return redirect('/Admin')
         
     @app.route('/<string:page>')

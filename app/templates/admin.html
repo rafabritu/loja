@@ -12,7 +12,7 @@
         <th>Preço</th>
         <th>Foto</th>
         <th>Cat_FK</th>
-        <th>Ações</th>
+        <th><a href="/Admin/cadastrar/produto/">Cadastrar</a></th>
     </tr>
     {% for produto in dados: %}
     <tr class="tabela-conteudo">
@@ -22,6 +22,7 @@
         <th>{{produto[3]}}</th>
         <th>{{produto[4]}}</th>
         <th><a href="Admin/edit/produto/{{produto[0]}}">Editar</a></th>
+        <th><a href="Admin/delete/produto/{{produto[0]}}">Remover</a></th>
     </tr>
     {% endfor %}
 </table>
