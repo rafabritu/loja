@@ -17,7 +17,7 @@ class produtos():
         
     def selecionar_categoria(cat):
         cat_id = categorias.selecionar(cat)
-        sql= f"SELECT * FROM produtos WHERE cat_fk={cat_id[0][0]};"
+        sql= f"SELECT * FROM produtos WHERE cat_fk={cat_id};"
         return db.sql(sql,'select')
         
     def selecionar_produto(id):

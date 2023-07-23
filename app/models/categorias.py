@@ -9,4 +9,8 @@ class categorias():
         db.sql(sql,'insert')
     def selecionar(categoria):
         sql= f"SELECT cat_id FROM categorias WHERE categoria='{categoria}';"
-        return db.sql(sql,'select')
+        cat_id = db.sql(sql,'select')
+        return cat_id[0][0]
+    def delete(cat_id):
+        sql= f"DELETE FROM categorias WHERE cat_id='{cat_id}';"
+        cat_id = db.sql(sql,'delete')

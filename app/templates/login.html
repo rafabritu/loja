@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+</head>
+    <section>
+        <header>
+            <h1>Login</h1>
+        </header>
+        <div class="bloco-login">
+            <form action="/login/auth" method="post" class="login-form">
+                <h2>Faça Login</h2>
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha">
+                {% if(erro==1) %}
+                <p class="login-fail">{{msg}}</p>
+                {% endif %}
+                <input type="submit" class="compra-btn" value="Entrar">
+            </form>
+        </div>
+
+    </section>
+</table>
+
+{% endblock %}
